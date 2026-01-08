@@ -53,7 +53,7 @@ export default function Cart() {
 
                 {it.product && (
                   <div style={{ marginTop: 8, opacity: 0.85 }}>
-                    Line total: ${it.product.price * it.quantity}
+                    Line total: ${(it.product.price * it.quantity).toFixed(2)}
                   </div>
                 )}
               </div>
@@ -61,7 +61,7 @@ export default function Cart() {
           </div>
 
           <div style={{ marginTop: 16, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <strong>Subtotal: ${subtotal}</strong>
+            <strong>Subtotal: ${subtotal.toFixed(2)}</strong>
             <div style={{ display: "flex", gap: 10 }}>
               <button onClick={clear}>Clear Cart</button>
               <button onClick={goCheckout}>Checkout</button>
